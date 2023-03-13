@@ -99,7 +99,7 @@ task.spawn(function()
         if CharacterSpawned() then 
             if plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then 
                 local hrp = plr.Character:FindFirstChild("HumanoidRootPart")
-                hrp.CFrame = CFrame.new(-4779.80811, -201.26947, -958.184448, -0.995607138) * CFrame.Angles(0,0,0)
+                hrp.CFrame = CFrame.new(-4779.80811, -201.26947, -958.184448) * CFrame.Angles(0,0,0)
                 if plr.Character:FindFirstChild("Humanoid") then 
                     local humanoid = plr.Character.Humanoid
                     if humanoid.Health > 0 and humanoid.Health < humanoid.MaxHealth - 15 then 
@@ -200,7 +200,7 @@ task.spawn(function()
         if CharacterSpawned() then 
             if plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then 
                 local hrp = plr.Character:FindFirstChild("HumanoidRootPart")
-                hrp.CFrame = CFrame.new(-4779.80811, -201.26947, -958.184448, -0.995607138) * CFrame.Angles(0,0,0)
+                hrp.CFrame = CFrame.new(-4779.80811, -201.26947, -958.184448) * CFrame.Angles(0,0,0)
                 if plr.Character:FindFirstChild("Humanoid") then 
                     local humanoid = plr.Character.Humanoid
                     if humanoid.Health > 0 and humanoid.Health < humanoid.MaxHealth - 15 then 
