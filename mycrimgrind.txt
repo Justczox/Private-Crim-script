@@ -3,7 +3,7 @@ local SikusLib = loadstring(game:HttpGet("http://sikuscripts.lol/library.lua"))(
 local window = SikusLib:CreateWindow({
     Title = "The czox's method script (PRIVATE)"; -- windows name 
     Font = nil;-- font keep as nil if u want to use default font
-    DiscordInvite = ""; -- DiscordInvite
+    DiscordInvite = "https://discord.gg/6QXWH3Dg"; -- DiscordInvite
 })
 
 local tab = window:CreateTab({
@@ -18,8 +18,8 @@ local section= tab:CreateSection({
 
 
 local button = section:CreateButton({
-    Title = "Start The Scriptt"; -- button name
-    Info = 'Bassicly begin the grind'; -- button info
+    Title = "Test Enable"; -- button name
+    Info = ''; -- button info
     Font = nil; -- font
     Callback = function() -- function
        local Players = game:GetService("Players")  
@@ -114,5 +114,118 @@ task.spawn(function()
         end
     end
 end)
+
+
+local button = section:CreateButton({
+    Title = "Turn Off"; -- button name
+    Info = ''; -- button info
+    Font = nil; -- font
+    Callback = function() -- function
+        local Players = game:GetService("Players")  
+local LocalPlayer = Players.LocalPlayer
+
+function CharacterSpawned()
+    local plr = game.Players.LocalPlayer
+    local character = plr.Character 
+    
+    if character then 
+        local hrp = character:FindFirstChild("HumanoidRootPart")
+        if hrp then 
+            return true 
+        end
     end
-})
+    
+end
+
+
+
+--function BringFistsOut()
+    if CharacterSpawned() then 
+        local plr = game.Players.LocalPlayer
+        local character = plr.Character 
+        local hrp = character.HumanoidRootPart
+        local humanoid = character.Humanoid
+        if not character:FindFirstChild("Fists") then 
+            task.wait(1)
+            local fistsTool = plr.Backpack:FindFirstChild("Fists")
+            if fistsTool then 
+                humanoid:EquipTool(fistsTool)
+            end
+        if not character:FindFirstChild("Fists") and not plr.Backpack:FindFirstChild("Fists") then 
+           warn("SEx")
+        end
+    else 
+        game:GetService("ReplicatedStorage").Events.DeathRespawn:InvokeServer()
+        end
+end
+end
+getgenv().tp = false -- ENABLE EBNALE ENBALE 
+LocalPlayer.CharacterAdded:Connect(function(Character)
+--print("char added")
+    for i,v in pairs(LocalPlayer.Backpack:GetChildren()) do
+--print("looped thro inv")
+        if v.name == "Fists" then
+   --print("2")
+            if true then
+--print("asndabguyr")
+                wait(0.2)
+                v.Parent = game.Players.LocalPlayer.Character
+                wait(.5)
+                v.Parent = game.Players.LocalPlayer.Backpack
+                wait(0.5)
+                v.Parent = game.Players.LocalPlayer.Character
+            end
+        end
+        
+        game:GetService("Players").LocalPlayer.Idled:connect(function()
+    game:GetService("VirtualUser"):Button2Down(Vector2.new(0,0), Workspace.CurrentCamera.CFrame)
+   wait(1)
+   game:GetService("VirtualUser"):Button2Up(Vector2.new(0,0), Workspace.CurrentCamera.CFrame)
+end)
+    end
+    
+    for i,v in pairs(getconnections(Player.Idled)) do 
+    v:Disable()
+for i,v in pairs(getconnections(Player.Idled)) do 
+    v:Disable()
+end
+
+end
+end)
+task.spawn(function()
+    while tp == true do 
+        task.wait()
+        --BringFistsOut()
+        local plr = game.Players.LocalPlayer
+        if CharacterSpawned() then 
+            if plr.Character and plr.Character:FindFirstChild("HumanoidRootPart") then 
+                local hrp = plr.Character:FindFirstChild("HumanoidRootPart")
+                hrp.CFrame = CFrame.new(-4309.31298828125, -94.16695404052734, -813.5322265625) * CFrame.Angles(0,0,0)
+                if plr.Character:FindFirstChild("Humanoid") then 
+                    local humanoid = plr.Character.Humanoid
+                    if humanoid.Health > 0 and humanoid.Health < humanoid.MaxHealth - 15 then 
+                        humanoid.Health = -1 
+                    elseif humanoid.Health <=0 then 
+                        game:GetService("ReplicatedStorage").Events.DeathRespawn:InvokeServer()
+                    end 
+                end 
+    
+            end
+    
+        end
+    end
+
+
+local button = section:CreateButton({
+    Title = "Femware-Shortcut"; -- button name
+    Info = 'Femware'; -- button info
+    Font = nil; -- font
+    Callback = function() -- function
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/JackHiggly/RobloxThings/main/FemWare0", true))()
+    end
+    
+    
+    
+})end
+)})
+end})
